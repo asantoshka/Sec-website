@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('.nav-links a');
 
-    window.addEventListener('scroll', () => {
-        sections.forEach(section => {
-            const sectionTop = section.getBoundingClientRect().top;
-            if (sectionTop < window.innerHeight - 100) {
-                section.classList.add('fade-in');
-            }
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            document.getElementById(targetId).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
 });
