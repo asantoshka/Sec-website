@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -54,16 +55,45 @@ header nav {
     color: #f59e0b;
 }
 
-/* Hero Section */
-.hero-section {
-    height: 100vh;
-    background: url('https://source.unsplash.com/1600x900/?cybersecurity') no-repeat center center/cover;
-    color: #fff;
+/* Hero and Background Sections */
+.hero-section, .bg-about, .bg-services, .bg-contact {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 2rem;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+.hero-section {
+    background: url('https://source.unsplash.com/1600x900/?cybersecurity') no-repeat center center/cover;
+}
+
+.bg-about {
+    background: url('https://source.unsplash.com/1600x900/?technology') no-repeat center center/cover;
+}
+
+.bg-services {
+    background: url('https://source.unsplash.com/1600x900/?network') no-repeat center center/cover;
+}
+
+.bg-contact {
+    background: url('https://source.unsplash.com/1600x900/?communication') no-repeat center center/cover;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .hero-text h1 {
@@ -71,13 +101,9 @@ header nav {
     margin-bottom: 1rem;
 }
 
-.hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-}
-
 .cta-button {
     display: inline-block;
+    margin-top: 1rem;
     padding: 0.8rem 2rem;
     background-color: #f59e0b;
     color: #fff;
@@ -90,11 +116,11 @@ header nav {
     background-color: #d97706;
 }
 
-/* Sections */
 .section {
     padding: 4rem 2rem;
     max-width: 1100px;
     margin: auto;
+    text-align: center;
 }
 
 .section h2 {
@@ -119,24 +145,6 @@ header nav {
 
 .service-item:hover {
     transform: translateY(-10px);
-}
-
-/* Contact Section */
-.contact-section {
-    background-color: #004080;
-    color: #fff;
-    text-align: center;
-    padding: 4rem 2rem;
-}
-
-.contact-section a {
-    color: #f59e0b;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact-section a:hover {
-    text-decoration: underline;
 }
 
 /* Footer */
